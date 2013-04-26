@@ -19,7 +19,6 @@
 
         <service id="herzult_forum.form.type.new_topic" class="%herzult_forum.form.new_topic.class%">
             <argument>%herzult_forum.form.new_topic.name%</argument>
-            <argument type="collection" />
         </service>
 
         <!-- Post Form -->

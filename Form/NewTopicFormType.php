@@ -5,6 +5,7 @@ namespace Herzult\Bundle\ForumBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Herzult\Bundle\ForumBundle\Model\CategoryRepositoryInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class NewTopicFormType extends AbstractType
 {
@@ -15,13 +16,13 @@ class NewTopicFormType extends AbstractType
         $builder->add('firstPost', $options['post_form'], array('data_class' => $options['post_class']));
     }
 
-    public function getDefaultOptions()
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
+        $resolver->setDefaults(array(
             'post_class'    => '',
             'post_form'     => '',
             'data_class'    => '',
-        );
+        ));
     }
 
     public function getName()
