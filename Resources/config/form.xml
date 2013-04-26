@@ -25,10 +25,6 @@
         <!-- Post Form -->
         <service id="herzult_forum.form.post" factory-method="create" factory-service="form.factory" class="Symfony\Component\Form\Form">
             <argument type="service" id="herzult_forum.form.type.post" />
-            <argument />
-            <argument type="collection">
-                <argument key="data_class">%herzult_forum.model.post.class%</argument>
-            </argument>
         </service>
 
         <service id="herzult_forum.form.type.post" class="%herzult_forum.form.post.class%">
